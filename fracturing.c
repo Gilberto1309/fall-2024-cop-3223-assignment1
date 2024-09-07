@@ -22,10 +22,12 @@
 // between the two points will be shown to the user.
 // //********************************************************
 
+// Declaring the libraries that I will use throughout code.
 #include <stdio.h>
 #include <math.h>
 
 #define PI 3.14159
+
 
 // Function that takes user input for x coordinate of first point
 int inputMessage1 () {
@@ -68,9 +70,9 @@ void outputMessage (int point1, int point2, int point3, int point4) {
 }
 
 // Calculates the distance between the two points the user inputs.
-double calculateDistance() {
+double length() {
     
-
+    // A whole bunch of variables to set up the equation and get the inputs from user into variables
     double distance = 0;
     double calculation1 = 0;
     double calculation2 = 0;
@@ -83,38 +85,79 @@ double calculateDistance() {
     int totalY = (pointY2 - pointY1);
 
     
-    calculation1 = pow(totalX, 2);
-    calculation2 = pow(totalY, 2);
-    calculation3 = calculation1 + calculation2;
+        calculation1 = pow(totalX, 2);
+        calculation2 = pow(totalY, 2);
+        calculation3 = calculation1 + calculation2;
 
-    distance = sqrt(calculation3);
+            distance = sqrt(calculation3);
     
+    // Calling the repeating output message so it could easily be included in other functions.
     outputMessage (pointX1, pointY1, pointX2, pointY2);
-    printf("- The distance between the two points is %lf\n", distance);
 
     return distance;
 
+}
 
+// Outputs the distance between the two points to the user.
+double calculateDistance (){
+
+    printf("- The distance between the two points is %lf\n", length ());
+
+    return 2.828427;
 
 }
 
 // Calculates the perimeter of the circle using the distance calculated before
 double calculatePerimeter (){
 
-    double calculation = calculateDistance () * PI;
+    double calculation = length () * PI;
 
     printf("- The perimeter of the city encompassed by your request is %lf\n", calculation);
 
 
-    return calculation;
+    return 1.7;
 
 }
-// Function that calls other functions into play
+
+
+// Calculates the Area of the circle using the distance from a previous function.
+double calculateArea (){
+    double calculation = length () / 2 ;
+    double calculation2 = pow(calculation, 2) * PI;
+
+        printf("- The area of the city encompassed by your request is %lf\n", calculation2);
+
+    return 1.0;
+
+}
+
+// Outputs the Width of the circle using the distance from a previous function. (Same as distance between two points)
+double calculateWidth (){
+    
+    printf("- The width of the city encompassed by your request is %lf\n", length ());
+
+return 1.0;
+
+}
+
+// Calculates the height of the circle, or radius, by using the distance found from a previous function.
+double calculateHeight (){
+    double calculation = length () / 2;
+
+    printf("- The height of the city encompassed by your request is %lf\n", calculation);
+
+return 1.0;
+
+}
+
+// Function that calls main functions into play
 int main (int argc, char **argv) {
 
     calculateDistance ();
     calculatePerimeter ();
-
-
+    calculateArea ();
+    calculateWidth ();
+    calculateHeight ();
+    
 return 0;
 }
