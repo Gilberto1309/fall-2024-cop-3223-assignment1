@@ -37,34 +37,31 @@ int inputMessage1 () {
 
 // Function that takes user input for y coordinate of first point
 int inputMessage2 () {
-    int point1 = 0;
+    int point2 = 0;
     printf("Enter your y1 value: ");
-         scanf(" %d/n", &point1);
-    return point1;
+         scanf(" %d/n", &point2);
+    return point2;
 }
 
 // Function that takes user input for x coordinate of second point
 int inputMessage3 () {
-    int point1 = 0;
+    int point3 = 0;
     printf("Enter your x2 value: ");
-         scanf(" %d/n", &point1);
-    return point1;
+         scanf(" %d/n", &point3);
+    return point3;
 }
 
 // Function that takes user input for y coordinate of second point
 int inputMessage4 () {
-    int point1 = 0;
+    int point4 = 0;
     printf("Enter your y2 value: ");
-         scanf(" %d/n", &point1);
-    return point1;
+         scanf(" %d/n", &point4);
+    return point4;
 }
 
 // A function that shows the user the coordinates they inputed for the points
-void outputMessage () {
-    int point1 = inputMessage1 ();
-    int point2 = inputMessage2 ();
-    int point3 = inputMessage3 ();
-    int point4 = inputMessage4 ();
+void outputMessage (int point1, int point2, int point3, int point4) {
+
    printf("- Point #1 entered: x1 = %d; y1 = %d \n- Point #2 entered: x2 = %d; y2 = %d \n", point1, point2, point3, point4);
 
    
@@ -92,7 +89,7 @@ double calculateDistance() {
 
     distance = sqrt(calculation3);
     
-    outputMessage ();
+    outputMessage (pointX1, pointY1, pointX2, pointY2);
     printf("- The distance between the two points is %lf\n", distance);
 
     return distance;
