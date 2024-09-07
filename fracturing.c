@@ -34,32 +34,40 @@ int inputMessage1 () {
     int point1 = 0;
     printf("Enter your x1 value: ");
          scanf(" %d/n", &point1);
+
     return point1;
 }
+
 
 // Function that takes user input for y coordinate of first point
 int inputMessage2 () {
     int point2 = 0;
     printf("Enter your y1 value: ");
          scanf(" %d/n", &point2);
+
     return point2;
 }
+
 
 // Function that takes user input for x coordinate of second point
 int inputMessage3 () {
     int point3 = 0;
     printf("Enter your x2 value: ");
          scanf(" %d/n", &point3);
+
     return point3;
 }
+
 
 // Function that takes user input for y coordinate of second point
 int inputMessage4 () {
     int point4 = 0;
     printf("Enter your y2 value: ");
          scanf(" %d/n", &point4);
+
     return point4;
 }
+
 
 // A function that shows the user the coordinates they inputed for the points
 void outputMessage (int point1, int point2, int point3, int point4) {
@@ -69,6 +77,7 @@ void outputMessage (int point1, int point2, int point3, int point4) {
    
 }
 
+
 // Calculates the distance between the two points the user inputs.
 double length() {
     
@@ -77,19 +86,21 @@ double length() {
     double calculation1 = 0;
     double calculation2 = 0;
     double calculation3 = 0;
+
     int pointX1 = inputMessage1 ();
     int pointY1 = inputMessage2 ();
     int pointX2 = inputMessage3 ();
     int pointY2 = inputMessage4 ();
+
     int totalX = (pointX2 - pointX1);
     int totalY = (pointY2 - pointY1);
 
-    
+    // Math to calculate distance between the two points
         calculation1 = pow(totalX, 2);
         calculation2 = pow(totalY, 2);
         calculation3 = calculation1 + calculation2;
 
-            distance = sqrt(calculation3);
+        distance = sqrt(calculation3);
     
     // Calling the repeating output message so it could easily be included in other functions.
     outputMessage (pointX1, pointY1, pointX2, pointY2);
@@ -98,8 +109,9 @@ double length() {
 
 }
 
+
 // Outputs the distance between the two points to the user.
-double calculateDistance (){
+double calculateDistance () {
 
     printf("- The distance between the two points is %lf\n", length ());
 
@@ -107,8 +119,9 @@ double calculateDistance (){
 
 }
 
+
 // Calculates the perimeter of the circle using the distance calculated before
-double calculatePerimeter (){
+double calculatePerimeter () {
 
     double calculation = length () * PI;
 
@@ -121,18 +134,19 @@ double calculatePerimeter (){
 
 
 // Calculates the Area of the circle using the distance from a previous function.
-double calculateArea (){
+double calculateArea () {
     double calculation = length () / 2 ;
     double calculation2 = pow(calculation, 2) * PI;
 
         printf("- The area of the city encompassed by your request is %lf\n", calculation2);
 
-    return 1.0;
+    return 1.4;
 
 }
 
+
 // Outputs the Width of the circle using the distance from a previous function. (Same as distance between two points)
-double calculateWidth (){
+double calculateWidth () {
     
     printf("- The width of the city encompassed by your request is %lf\n", length ());
 
@@ -140,15 +154,17 @@ return 1.0;
 
 }
 
+
 // Calculates the height of the circle, or radius, by using the distance found from a previous function.
-double calculateHeight (){
+double calculateHeight () {
     double calculation = length () / 2;
 
     printf("- The height of the city encompassed by your request is %lf\n", calculation);
 
-return 1.0;
+return 1.1;
 
 }
+
 
 // Function that calls main functions into play
 int main (int argc, char **argv) {
